@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Project 3 placeholder</title>
+  <desc id="desc">Abstract advocacy campaign placeholder.</desc>
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#121a2d"/>
+      <stop offset="100%" stop-color="#1e2740"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g3)"/>
+  <path d="M110 450 C200 300, 300 265, 410 323 S610 460, 700 250 L700 520 L110 520 Z" fill="#c99d23" opacity="0.7"/>
+  <circle cx="260" cy="220" r="104" fill="#8a7bff" opacity="0.8"/>
+  <circle cx="520" cy="175" r="78" fill="#f3d56b" opacity="0.8"/>
+  <path d="M240 350 L400 210 L560 350" fill="none" stroke="#f6f5ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#f8fbff" font-family="Arial, sans-serif" font-size="30" font-weight="700">
+    <text x="90" y="90">SRHR</text>
+  </g>
+  <g fill="#c9c7da" font-family="Arial, sans-serif" font-size="22">
+    <text x="90" y="560">Advocacy</text>
+  </g>
+</svg>
