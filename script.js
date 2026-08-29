@@ -6,6 +6,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Theme toggle ---------- */
+  const themeToggle = document.getElementById('themeToggle');
+
+  const moonIcon = `
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path d="M20 12.7A8.7 8.7 0 0 1 11.3 4a8.7 8.7 0 1 0 8.7 8.7Z" fill="currentColor"/>
+    </svg>
+  `;
+
+  const sunIcon = `
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.6" fill="currentColor"/>
+      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M12 2.5v2.2M12 19.3v2.2M4.7 4.7l1.5 1.5M17.8 17.8l1.5 1.5M2.5 12h2.2M19.3 12h2.2M4.7 19.3l1.5-1.5M17.8 6.2l1.5-1.5" fill="none"/>
+      </g>
+    </svg>
+  `;
+
+  const applyTheme = (theme) => {
+    const isDark = theme === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      const icon = themeToggle.querySelector('.theme-toggle-icon');
+      if (icon) icon.innerHTML = isDark ? sunIcon : moonIcon;
+    }
+    localStorage.setItem('theme', theme);
+  };
+
+  const savedTheme = localStorage.getItem('theme');
+  const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(preferredTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
+  }
+
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('main-nav');
