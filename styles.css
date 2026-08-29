@@ -5,14 +5,14 @@
 
 :root{
   /* --- color --- */
-  --bg:            #1A1D24;
-  --surface:       #22262F;
-  --surface-alt:   #2A2F3B;
-  --ink:           #F5F6F8;
-  --ink-muted:     #9AA1B2;
-  --accent-gold:   #FFC24B;
-  --accent-violet: #7B6CF6;
-  --line:          rgba(245,246,248,0.09);
+  --bg:            #fbf7f4;
+  --surface:       #f5f1ee;
+  --surface-alt:   #f9f6f4;
+  --ink:           #1e2127;
+  --ink-muted:     #5f636a;
+  --accent-gold:   #B99163;
+  --accent-violet: #6F63C7;
+  --line:          rgba(30,33,39,0.08);
 
   /* --- type --- */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
@@ -70,14 +70,16 @@ p{ margin: 0; }
 .bg-grid{
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(245,246,248,0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(31,35,40,0.06) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
 }
 
-.section{ position: relative; padding: 96px 0; z-index: 1; }
-.section:nth-of-type(even){ background: var(--surface); }
+.section{ position: relative; padding: 64px 0; z-index: 1; }
+.section:nth-of-type(even){ background: rgba(255,255,255,0.18); }
+.about{ padding-bottom: 30px; }
+.resume{ padding-top: 30px; }
 
 .section-eyebrow{
   font-family: var(--font-mono);
@@ -131,6 +133,8 @@ p{ margin: 0; }
 .btn-ghost{ background: transparent; color: var(--ink); border-color: var(--line); }
 .btn-ghost:hover{ border-color: var(--accent-violet); color: var(--accent-violet); }
 
+body .main-nav{ background: rgba(251,247,244,0.96); }
+
 /* signature clipped-corner panel, reused by cards across the page */
 .cut-panel{
   clip-path: polygon(
@@ -147,7 +151,7 @@ p{ margin: 0; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(26,29,36,0.82);
+  background: rgba(251,247,244,0.82);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -218,8 +222,8 @@ p{ margin: 0; }
 }
 
 .hero-title{
-  font-size: clamp(38px, 5.4vw, 64px);
-  line-height: 1.06;
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 1.02;
   margin-bottom: 24px;
 }
 .hero-title .highlight{ color: var(--accent-gold); }
