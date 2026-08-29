@@ -52,6 +52,7 @@ body{
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -70,9 +71,10 @@ h1, h2, h3, h4{ font-family: var(--font-display); margin: 0; font-weight: 600; l
 p{ margin: 0; }
 
 .wrap{
-  max-width: var(--wrap);
+  width: min(var(--wrap), calc(100% - 32px));
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 0;
 }
 
 :focus-visible{
@@ -254,6 +256,8 @@ body.dark-mode .form-row select{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -265,10 +269,18 @@ body.dark-mode .form-row select{
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 17px;
+  flex-shrink: 0;
 }
 .brand-mark{ color: var(--accent-gold); display: inline-flex; }
 
-.main-nav{ display: flex; gap: 30px; }
+.main-nav{
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex: 1 1 240px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
 .nav-link{
   font-size: 14.5px;
   font-weight: 500;
@@ -277,7 +289,12 @@ body.dark-mode .form-row select{
 }
 .nav-link:hover, .nav-link.is-active{ color: var(--ink); }
 
-.header-actions{ display: flex; align-items: center; gap: 20px; }
+.header-actions{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
 
 .social-row{ display: flex; gap: 12px; }
 .social-icon{
